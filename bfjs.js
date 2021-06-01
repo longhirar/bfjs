@@ -5,12 +5,12 @@ Array.prototype.move = (from, to) => {
 Array.prototype.pushBefore = (elem) => {
     this.push(elem);
     this.move(this.length - 1, 0);
-}
+};
 // Im sorry for this sleep abomination
 const sleep = (delay) => {
     var start = new Date().getTime();
     while (new Date().getTime() < start + delay);
-}
+};
 
 // bfjs // Brainfuck Javascript Interpreter //
 
@@ -23,11 +23,15 @@ const executeInstruction = (inst) => {
     switch (inst) {
         case "<":
             memPointer--;
-            if (memPointer < 0) { memPointer = mem.length - 1 }
+            if (memPointer < 0) {
+                memPointer = mem.length - 1;
+            }
             break;
         case ">":
             memPointer++;
-            if (memPointer >= mem.length) { mem.push(0); }
+            if (memPointer >= mem.length) {
+                mem.push(0);
+            }
             break;
         case "-":
             mem[memPointer]--;
@@ -36,13 +40,12 @@ const executeInstruction = (inst) => {
             mem[memPointer]++;
             break;
         default:
-            console.log('Unknown Instruction: ' + inst);
+            console.log("Unknown Instruction: " + inst);
             break;
     }
-}
+};
 
 const executeCode = (code) => {
-
     let instructionPointer = 0;
     mem = [0];
     memPointer = 0;
@@ -55,16 +58,14 @@ const executeCode = (code) => {
                 // If cell value is not 0: ++ insideLoopCounter;
                 if (mem[memPointer] > 0) {
                     insideLoopCounter++;
-                    console.log("inside loop, but wont jump it.")
+                    console.log("inside loop, but wont jump it.");
                 } else {
                     // If cell value is 0: Jump the loop, making sure no bugs occur with inside loops;
                     let loopsToSkip = 1;
 
-                    console.log("jumping loops!")
-
+                    console.log("jumping loops!");
 
                     while (loopsToSkip != 0 && code[instructionPointer] != "]") {
-
                         //if (code[instructionPointer] == "[") { loopsToSkip++; }
                         //if (code[instructionPointer] == "]") { loopsToSkip--; }
 
@@ -91,7 +92,6 @@ const executeCode = (code) => {
                     let loopsToSkip = 1;
 
                     while (loopsToSkip != 0 && code[instructionPointer] != "[") {
-
                         //if (code[instructionPointer] == "[") { loopsToSkip++; }
                         //if (code[instructionPointer] == "]") { loopsToSkip--; }
 
@@ -100,10 +100,10 @@ const executeCode = (code) => {
 
                         switch (code[instructionPointer]) {
                             case "[":
-                                loopsToSkip++;
+                                loopsToSkip--;
                                 break;
                             case "]":
-                                loopsToSkip--;
+                                loopsToSkip++;
                                 break;
                         }
 
@@ -129,21 +129,21 @@ const executeCode = (code) => {
         // function to make the feedback more detailed;
         renderBF();
     }
-}
+};
 
 const renderBF = () => {
     // TODO:
 
     // This function shall update the values on screen according
-    // to the values current in the variables, it's soul purpose 
+    // to the values current in the variables, it's soul purpose
     // is to give feedback about what is happening to the user;
 
-    var memoryDisplay = document.getElementsByClassName('memoryDisplay')[0];
+    var memoryDisplay = document.getElementsByClassName("memoryDisplay")[0];
     memoryDisplay.innerHTML = ""; // Remove children
 
     let index = 0;
-    mem.forEach(memCell => {
-        let memoryCell = document.createElement('div');
+    mem.forEach((memCell) => {
+        let memoryCell = document.createElement("div");
 
         // If memCell is the selected one, set class to "memoryCellSelected";
         // else: set it to "memoryCell";
@@ -166,10 +166,8 @@ const renderBF = () => {
         index++;
     });
 
-    // Any waiting that needs to be done during the execution to 
+    // Any waiting that needs to be done during the execution to
     // slow the code so the user can debug it must be done here;
-}
-
-
+};
 
 renderBF();
