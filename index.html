@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>BFJS</title>
+
+    <!-- ColorCSS -->
+    <link rel="stylesheet" href="color.css">
+
+
+    <link rel="stylesheet" href="bfjs.css">
+    <script defer src="bfjs.js"></script>
+</head>
+
+<body class="_body_">
+    <div class="logoDisplay">
+        <h1 class="_h1_">BFJS</h1>
+        <p class="_p_">Brainfuck Javascript Interpreter</p>
+    </div>
+
+    <div class="memoryDisplay">
+        <div class="memoryCell">0</div>
+        <div class="memoryCell">1</div>
+        <div class="memoryCell">2</div>
+    </div>
+
+    <!--
+    <div class="instDisplay">
+
+    </div>
+    -->
+
+    <div class="editorContainer">
+        <!--
+        <a href="javascript:executeInstruction('<'); renderBF()">&#60;</a>
+        <a href="javascript:executeInstruction('>'); renderBF()">&#62;</a>
+        <a href="javascript:executeInstruction('+'); renderBF()">+</a>
+        <a href="javascript:executeInstruction('-'); renderBF()">-</a>
+        -->
+
+        <a href="javascript:executeCode(document.getElementById('codeBox').value);">Run Code</a>
+        <textarea id="codeBox"></textarea>
+
+
+    </div>
+</body>

@@ -1,0 +1,20 @@
+:root {
+    --dm-blk: #000;
+    --dm-0: #0e0e0e; /*                     */
+    --dm-1: #1e1e1e; /*                     */
+    --dm-2: #2e2e2e; /*                     */
+    --dm-3: #3e3e3e; /*         DA          */
+    --dm-4: #4e4e4e; /*         RK          */
+    --dm-5: #5e5e5e; /*                     */
+    --dm-6: #6e6e6e; /*         MO          */
+    --dm-7: #7e7e7e; /*         DE          */
+    --dm-8: #8e8e8e; /*                     */
+    --dm-9: #9e9e9e; /*        GRAY         */
+    --dm-a: #aeaeae; /*        SCALE        */
+    --dm-b: #bebebe; /*                     */
+    --dm-c: #cecece; /*                     */
+    --dm-d: #dedede; /*                     */
+    --dm-e: #eeeeee; /*                     */
+    --dm-f: #fefefe; /*                     */
+
+}
